@@ -1,4 +1,4 @@
-package modbus
+package go_modbus
 
 import (
 	"encoding/binary"

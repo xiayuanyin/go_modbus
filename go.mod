@@ -1,3 +1,3 @@
-module xyyModbus
+module github.com/xiayuanyin/go_modbus
 
-go 1.21
+go 1.21.1
