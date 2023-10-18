@@ -55,8 +55,7 @@ func (req *ModbusReadRequest) toBytes() []byte {
 		crc := Crc16(buf[6 : len(buf)-2])
 		binary.LittleEndian.PutUint16(buf[len(buf)-2:], crc)
 	}
-
-	fmt.Println("read request:", buf)
+	fmt.Println("read request", buf)
 	return buf
 }
 
@@ -100,7 +99,6 @@ func (req *ModbusWriteRequest) toBytes() []byte {
 		crc := Crc16(buf[6 : len(buf)-2])
 		binary.LittleEndian.PutUint16(buf[len(buf)-2:], crc)
 	}
-	fmt.Println("write request:", buf)
 	return buf
 }
 

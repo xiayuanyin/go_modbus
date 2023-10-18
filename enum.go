@@ -2,7 +2,7 @@ package go_modbus
 
 type FunctionCode byte
 type ExceptionCode byte
-type TcpConnStatus int
+type NetConnStatus int
 
 const (
 	FunctionCodeReadCoils                  FunctionCode = 0x01
@@ -31,7 +31,7 @@ var ExceptionMessageMap = map[byte]string{
 }
 
 const (
-	TcpConnecting   TcpConnStatus = 0
-	TcpConnected    TcpConnStatus = 1
-	TcpDisconnected TcpConnStatus = 2
+	TcpConnecting   NetConnStatus = 0
+	TcpConnected    NetConnStatus = 1
+	TcpDisconnected NetConnStatus = 2
 )

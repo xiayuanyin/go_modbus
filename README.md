@@ -12,7 +12,7 @@ Allow asynchronous reading and writing of multiple registers/coils (TCP and if o
 # Usage
 ```go
 // local test server
-var c ModbusClient = &(ModbusTcp{
+var c ModbusClient = &(ModbusPort{
     Host:           "127.0.0.1",
     Port:           1502,
     ConnectTimeout: time.Second * 10,
@@ -60,5 +60,5 @@ Bit access:
 
 # TODO
 - [x] modbus tcp client
-- [ ] modbus udp client
+- [x] modbus udp client
 - [ ] modbus rtu client
