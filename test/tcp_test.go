@@ -9,6 +9,7 @@ import (
 	"time"
 )
 
+// https://www.cnblogs.com/The-explosion/p/11512677.html
 func TestCrc16(t *testing.T) {
 	//01 03 61 00 00 02
 	data := []byte{0x01, 0x03, 0x61, 0x00, 0x00, 0x02}

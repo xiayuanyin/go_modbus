@@ -7,7 +7,7 @@ import (
 
 type ModbusRequest interface {
 	toBytes() []byte
-	ensureAddress(starsWithOne bool)
+	ensureAddress(startsWithOne bool)
 }
 
 type ModbusReadRequest struct {
@@ -20,15 +20,15 @@ type ModbusReadRequest struct {
 	EnableCrc16  bool
 }
 
-func (req *ModbusReadRequest) ensureAddress(starsWithOne bool) {
-	if starsWithOne {
-		req.FixedAddress = req.Address + 1
+func (req *ModbusReadRequest) ensureAddress(startsWithOne bool) {
+	if startsWithOne {
+		req.FixedAddress = req.Address - 1
 	} else {
 		req.FixedAddress = req.Address
 	}
 }
-func (req *ModbusWriteRequest) ensureAddress(starsWithOne bool) {
-	if starsWithOne {
+func (req *ModbusWriteRequest) ensureAddress(startsWithOne bool) {
+	if startsWithOne {
 		req.FixedAddress = req.Address + 1
 	} else {
 		req.FixedAddress = req.Address
