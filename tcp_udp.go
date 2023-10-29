@@ -151,7 +151,6 @@ func (conn *ModbusPort) readRequest(functionCode FunctionCode, slaveId byte, add
 		FunctionCode: functionCode,
 		Address:      address,
 		Length:       length,
-		EnableCrc16:  true,
 	}
 	err := conn.SendRequest(req)
 	if err != nil {
