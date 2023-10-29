@@ -4,6 +4,9 @@ type ModbusClient interface {
 	Connect() error
 	Disconnect() error
 
+	IsConnected() bool
+	Reopen() error
+
 	SendRequest(req ModbusRequest) error
 
 	ReadCoils(address uint16, length uint16) (ResponseData[bool], error)
