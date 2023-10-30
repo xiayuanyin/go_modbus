@@ -2,7 +2,6 @@ package go_modbus
 
 import (
 	"encoding/binary"
-	"fmt"
 )
 
 type ModbusRequest interface {
@@ -55,7 +54,6 @@ func (req *ModbusReadRequest) toBytes() []byte {
 		crc := Crc16(buf[6 : len(buf)-2])
 		binary.LittleEndian.PutUint16(buf[len(buf)-2:], crc)
 	}
-	fmt.Println("read request", buf)
 	return buf
 }
 
